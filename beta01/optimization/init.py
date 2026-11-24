@@ -1,0 +1,1 @@
+"""Clip boundary and overlap optimization modules."""

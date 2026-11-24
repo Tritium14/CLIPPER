@@ -1,0 +1,72 @@
+{
+  "ai": {
+  "provider": "openrouter",
+  "model": "nvidia/nemotron-3-ultra-550b-a55b:free",
+  "fallback_models": ["openrouter/free"],
+  "chunk_max_chars": 40000,
+  "chunk_overlap_chars": 3000,
+  "max_output_tokens": 8000,
+  "min_seconds_between_requests": 3.0
+  },
+  "durations": {
+    "min_seconds": 20.0,
+    "preferred_max_seconds": 180.0,
+    "absolute_max_seconds": 200.0
+  },
+  "selection": {
+    "num_clips": 5,
+    "min_score": 60.0,
+    "overlap_threshold": 0.5,
+    "allow_merge": true
+  },
+  "scoring_weights": {
+    "interestingness": 0.3,
+    "hook_strength": 0.2,
+    "context_completeness": 0.2,
+    "emotional_impact": 0.1,
+    "standalone_quality": 0.15,
+    "relevance": 0.05
+  },
+  "vertical": {
+    "width": 1080,
+    "height": 1920,
+    "crop_mode": "auto",
+    "foreground_scale": 1.0,
+    "background_blur": 30,
+    "background_scale": 1.0,
+    "foreground_position": "center",
+    "foreground_offset_px": 0
+  },
+  "subtitles": {
+    "font": "Arial",
+    "font_size": 64,
+    "text_color": "#FFFFFF",
+    "outline_color": "#000000",
+    "highlight_color": "#FFD700",
+    "outline_width": 4,
+    "position": "lower_third",
+    "bottom_margin_px": 420,
+    "max_words_per_line": 4,
+    "max_lines": 2,
+    "word_highlight": true,
+    "correct_text": false
+  },
+  "export": {
+    "container": "mp4",
+    "video_codec": "libx264",
+    "audio_codec": "aac",
+    "crf": 18,
+    "preset": "medium",
+    "fps": 30,
+    "audio_bitrate": "192k",
+    "pixel_format": "yuv420p"
+  },
+  "paths": {
+    "output_dir": "output_clips",
+    "temp_dir": "temp",
+    "data_dir": "data",
+    "log_dir": "logs",
+    "cleanup_temp": true,
+    "overwrite_existing": false
+  }
+}
